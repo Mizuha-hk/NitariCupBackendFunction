@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34004.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NitariCupBackendFunction", "NitariCupBackendFunction\NitariCupBackendFunction.csproj", "{6AFE08F2-9BC8-466F-966C-9F211E7008EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AFE08F2-9BC8-466F-966C-9F211E7008EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFE08F2-9BC8-466F-966C-9F211E7008EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFE08F2-9BC8-466F-966C-9F211E7008EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFE08F2-9BC8-466F-966C-9F211E7008EE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AA8BDA2-6524-47D5-9DC3-CCFB37536239}
+	EndGlobalSection
+EndGlobal
