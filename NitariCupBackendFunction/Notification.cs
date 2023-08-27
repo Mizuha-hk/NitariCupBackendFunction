@@ -15,14 +15,16 @@ namespace NitariCupBackendFunction
         }
 
         [Function("Notification")]
-        public async Task SendNotification([TimerTrigger("0 0 * * * *")] MyInfo myTimer)
+        public async Task SendNotification([TimerTrigger("0 */20 * * * *")] MyInfo myTimer)
         {
             _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
             _logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
 
             var data = await TaskGetter.GetTask(Environment.GetEnvironmentVariable("NITARI_CUP_BACKEND_URI") + "/api/TaskScheme/Notification");
 
-            if (data[0].Id == Guid.Empty)
+            _logger.LogInformation($"Tasks to notify: {data}");
+
+            if (data.IsEmpty)
             {
                 _logger.LogInformation("No task to notify.");
                 return;

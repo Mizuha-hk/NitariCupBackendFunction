@@ -12,9 +12,9 @@ module Replayer =
     let Replay (channelAccessToken: string ,tasks: ResponseData[]) =
         task {
 
-            let mutable TextMessage = "直近のタスクのお知らせ.\n"
+            let mutable TextMessage = "直近のタスクのお知らせ!\n"
             for task in tasks do
-                TextMessage <- TextMessage + task.title + "\n" + task.startDate.ToString() + "~ \n" + task.limitDate.ToString() + "\n"
+                TextMessage <- TextMessage + task.title + "\n" + task.startDate.ToString() + "~ \n" + task.limitDate.ToString() + "\n\n"
 
             let reply = { To = tasks[0].userId; Messages = [|{ Type = "text"; Text = TextMessage}|]}
 

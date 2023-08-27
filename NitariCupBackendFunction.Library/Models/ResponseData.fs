@@ -2,6 +2,7 @@
 
 open System
 
+[<CLIMutable>]
 type ResponseData = {
     Id: Guid
     userId: string
@@ -10,7 +11,7 @@ type ResponseData = {
     startDate: DateTime
     limitDate: DateTime
     createdAt: DateTime
-    IsDone: bool
-    DoneDate: DateTime
-    score: float
+    IsDone: Nullable<bool>
+    DoneDate: Nullable<DateTime>
+    score: Nullable<float>
 }

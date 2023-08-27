@@ -12,10 +12,10 @@ module TaskGetter =
                 let client = new HttpClient()
                 let! response = client.GetAsync(uri) |> Async.AwaitTask
                 
-                if response.IsSuccessStatusCode then
-                    let! responseBody = response.Content.ReadAsStringAsync() |> Async.AwaitTask
-                    let task = JsonSerializer.Deserialize<List<ResponseData>>(responseBody)
-                    return task
+                let! responseBody = response.Content.ReadAsStringAsync() |> Async.AwaitTask
+                if responseBody = "[]" then
+                    return List<ResponseData>.Empty
                 else
-                    return [{ Id = Guid.Empty; userId = ""; title = ""; description = ""; startDate = DateTime.MinValue; limitDate = DateTime.MinValue; createdAt = DateTime.MinValue; IsDone = false; DoneDate = DateTime.MinValue; score = 0.0 }]
+                    let tasks = JsonSerializer.Deserialize<List<ResponseData>>(responseBody)
+                    return tasks
             }
